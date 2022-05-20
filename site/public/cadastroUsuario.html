@@ -35,21 +35,27 @@
               
                <div class="div_container">
                <div class="half-box">
-                   <input id="ipt_identify" placeholder="Nome">
+                   <input id="nome" placeholder="Nome">
                </div>
                <div class="half-box">
-                   <input id="ipt_system" placeholder="Data de Nascimento">
+                   <input id="dataNasc" placeholder="Data de Nascimento">
                </div>
                <div class="half-box">
-                <input id="ipt_system" placeholder="Email">
+                <input id="email" placeholder="Email">
                </div>
                <div class="half-box">
-                <input id="ipt_system" placeholder="Senha">
+                <input type="password" id="senha" placeholder="Senha">
                </div>
-               <select class="half-box">
-                   <option id="ipt_system" value=""> Tipo de Usuário</option>
-                   <option id="ipt_system" value=""> Professor </option>
-                   <option id="ipt_system" value=""> Aluno </option>
+               <div class="half-box">
+                <input type="password" id="confirmacaoSenha" placeholder="confirme sua senha">
+               </div>
+               <div class="half-box">
+                <input id="fkInstituicao" placeholder="Numero da sua instituição">
+               </div>
+               <select id="tipoUsuario" class="half-box">
+                   <option  value="">Tipo de Usuário</option>
+                   <option  value="professor">Professor</option>
+                   <option  value="aluno">Aluno</option>
                </select>
                </div>
                <div class="full-box1">
@@ -74,28 +80,35 @@
     }
 
     function cadastrar() {
-        // aguardar();
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
-        //var nome = formulario.get("instituicao");
-        //var rua = formulario.get("rua");
         var nome = formulario.get("nome");
+        var dataNascimento = formulario.get("dataNasc");
         var email = formulario.get("email");
-        var senha = formulario.get("senha");
+        var instituicao = formulario.get("fkInstituicao");
+        var tipoDeUsuario = formulario.getElementById('tipoUsuario').value;
+        
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (nome == "" || email == "" || senha == "") {
+        if (nome == "" || dataNascimento == "" || email == "" || instituicao == "" || tipoDeUsuario == ""
+            ) {
 
             window.alert("Preencha todos os campos para prosseguir!");
             if (nome == "") {
-                console.log('Nome está em branco')
+                console.log('Instituicao está em branco')
+            }
+            if (dataNascimento == "") {
+                console.log('Rua está em branco')
             }
             if (email == "") {
-                console.log('email está em branco')
+                console.log('numero está em branco')
             }
-            if (senha == "") {
-                console.log('Senha está em branco')
+            if (instituicao == "") {
+                console.log('bairro está em branco')
+            }
+            if (tipoDeUsuario == "") {
+                console.log('cep está em branco')
             }
             //finalizarAguardar();
             return false;
@@ -107,37 +120,36 @@
             return false;
         }
 
-        //if (senha != confirmacaoSenha) {
-        // window.alert("As senhas inseridas devem ser iguais para prosseguir!");
-        //finalizarAguardar();
-        // return false;
-        // }
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            //finalizarAguardar();
+            return false;
+        }
 
-        // fetch("/usuarios/cadastrar", {
-        //     method: "POST",
-        //     body: formulario
-        // }).then(function (resposta) {
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
 
-        //     console.log("resposta: ", resposta);
+            console.log("resposta: ", resposta);
 
-        //     if (resposta.ok) {
-        //         window.alert("Cadastro realizado com sucesso!");
-        //         //window.location = "login.html";
-        //         limparFormulario();
-        //         // finalizarAguardar();
-        //     } else {
-        //         throw ("Houve um erro ao tentar realizar o cadastro!");
-        //     }
-        // }).catch(function (resposta) {
-        //     console.log(`#ERRO: ${resposta}`);
-        //     // finalizarAguardar();
-        // });
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                //window.location = "login.html";
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
 
-        // return false;
+        return false;
 
 
     }
-</script>
-</body>
 
-</html>
+   
+</script>

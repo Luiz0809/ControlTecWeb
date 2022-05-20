@@ -61,15 +61,20 @@ function entrar (req, res) {
 }
 
 function cadastrar(req, res) {
-    var nome = req.body.nome;
+    var nome = req.body.instituicao;
     var email = req.body.email;
     var senha = req.body.senha;
-    var dataNascimento = req.body.dataNasc;
-    var tipoDeUsuario = req.body.tipoDeUsuario;
-    var fkInstituicao = req.body.fkInstituicao;
+    var estado = req.body.estado;
+    var bairro = req.body.bairro;
+    var cep = req.body.cep;
+    var cidade = req.body.cidade;
+    var rua = req.body.rua;
+    var pontoreferencia = req.body.pontoreferencia;
+    var complemento = req.body.complemento;
+    var numero = req.body.numero;
 
    
-        usuarioModel.cadastrar(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstituicao)
+        usuarioModel.cadastrar(nome, numero, rua, bairro, cep, complemento, pontoreferencia, cidade, estado, email, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -89,6 +94,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     entrar,
-    cadastrar
-    
+    cadastrar,
+    testar
 }
