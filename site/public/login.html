@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title> Cadastro </title>
+</head>
+
+<body>
+    <header>
+        <div class="div_logo"><img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a class="item" href="index.html"> Home </a>
+                    <a class="item" href="cadastro.html"> Cadastro</a>
+                    <a class="item" href="login.html"> Login </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-image">
+            <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png" alt="">
+        </div>
+        <div class="form">
+            <form action="#" id="form_login" method="post" onsubmit="returnentrar()">
+                <div class="form-header">
+                    <div class="title">
+                        <h1> Entrar </h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+                <div class="continue-button">
+                    <button><a href="#"> Entrar </a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="logo">
+            <img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
+        </div>
+        <div class="dados">
+          <p> <h5> Início </h5>
+              Menu <br>  
+           </p>
+        </div>
+        <div class="dados2">
+            <p>
+             <h5> Suporte </h5>
+             FAQ <br>
+             Telefones <br>
+             Chat <br>
+           </p>
+        </div>
+        <div class="media">
+          <p> @2022 Copyright - Control Tec </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+       // aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            //finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            //finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                   // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

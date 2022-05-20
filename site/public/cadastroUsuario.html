@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadasusua.css">
+    <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
+    <script src="./js/funcoes.js"></script>
+    <title>Cadastro Usuário</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="" class="logo">
+            <span>ControlTec</span>
+        </a>
+        <ul class="menu">
+         <li><a href="dashboard.html"><i class="bi bi-display "></i><span class="active">Monitoramento PC</span></a></li>
+         <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
+         <li><a href="cadastroMaquina.html"><i class="bi bi-display"></i><span>Cadastro de Máquina</span></a></li>
+         <li class="active"><a href="cadastroUsuario.html"><i class="bi bi-display"></i><span> Cadastro de Usuário</span></a></li>
+         <li><a href=""><i class="bi bi-display"></i><span> Suporte</span></a></li>
+         <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
+        </ul>
+    </nav>
+    
+        <div id="main-container">
+            <h1>Cadastre seu Usuário</h1>
+            
+            <form method="post" id="form_cadastro" onsubmit="return cadastrar()">
+               <h3>Usuário</h3>
+              
+               <div class="div_container">
+               <div class="half-box">
+                   <input id="ipt_identify" placeholder="Nome">
+               </div>
+               <div class="half-box">
+                   <input id="ipt_system" placeholder="Data de Nascimento">
+               </div>
+               <div class="half-box">
+                <input id="ipt_system" placeholder="Email">
+               </div>
+               <div class="half-box">
+                <input id="ipt_system" placeholder="Senha">
+               </div>
+               <select class="half-box">
+                   <option id="ipt_system" value=""> Tipo de Usuário</option>
+                   <option id="ipt_system" value=""> Professor </option>
+                   <option id="ipt_system" value=""> Aluno </option>
+               </select>
+               </div>
+               <div class="full-box1">
+                <input type="checkbox" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="">termos de uso</a></label>
+               </div>
+               <div class="full-box">
+                <input type="submit" id="btn-submit" value="Registrar">
+               </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        // aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        //var nome = formulario.get("instituicao");
+        //var rua = formulario.get("rua");
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "") {
+                console.log('Nome está em branco')
+            }
+            if (email == "") {
+                console.log('email está em branco')
+            }
+            if (senha == "") {
+                console.log('Senha está em branco')
+            }
+            //finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            //finalizarAguardar();
+            return false;
+        }
+
+        //if (senha != confirmacaoSenha) {
+        // window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+        //finalizarAguardar();
+        // return false;
+        // }
+
+        // fetch("/usuarios/cadastrar", {
+        //     method: "POST",
+        //     body: formulario
+        // }).then(function (resposta) {
+
+        //     console.log("resposta: ", resposta);
+
+        //     if (resposta.ok) {
+        //         window.alert("Cadastro realizado com sucesso!");
+        //         //window.location = "login.html";
+        //         limparFormulario();
+        //         // finalizarAguardar();
+        //     } else {
+        //         throw ("Houve um erro ao tentar realizar o cadastro!");
+        //     }
+        // }).catch(function (resposta) {
+        //     console.log(`#ERRO: ${resposta}`);
+        //     // finalizarAguardar();
+        // });
+
+        // return false;
+
+
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="./js/funcoes.js"></script>
+    <title> Cadastro </title>
+</head>
+
+<body>
+     <header class="header">
+        <div class="div_logo"><img id="logo" src="imagens/imagem sem fundo (1).png" alt=""></div>
+            <div class="navigation">
+                    <a class="item" href="index.html"> Home </a>
+                    <a class="item" href="cadastro.html"> Cadastro</a>
+                    <a class="item" href="login.html"> Login </a>
+                </div>
+    </header> 
+
+    <div class="container">
+        <div class="form-image">
+            <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png"
+                alt="">
+        </div>
+        <div class="form">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="login.html">Entrar</a></button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Instituição</label>
+                        <input type="text" name="instituicao" placeholder="Digite o nome da Instituição">
+                    </div>
+                    <div class="input-box">
+                        <label for="lastname">Rua</label>
+                        <input type="text" name="rua" placeholder="Digite sua rua">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Número</label>
+                        <input type="text" name="numero" placeholder="Digite o número de casa">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Bairro</label>
+                        <input type="text" name="bairro" placeholder="Digite o nome do bairro">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Estado</label>
+                        <input type="text" name="estado" placeholder="Digite estado onde mora">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Cidade</label>
+                        <input type="text" name="cidade" placeholder="Digite cidade onde mora">
+                    </div>
+                    <div class="input-box">
+                        <label>CEP</label>
+                        <input type="text" name="cep" placeholder="00000-000">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Ponto de Referência</label>
+                        <input type="text" name="pontoreferencia" placeholder="Estação Luz">
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Complemento</label>
+                        <input type="text" name="complemento" placeholder="Casa - Trabalho">
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input type="password" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input type="password" name="confirmacao-senha" placeholder="Digite sua senha novamente">
+                    </div>
+                </div>
+                <div class="continue-button">
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+     <footer class="footer">
+        <div class="logo">
+            <img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
+        </div>
+        <div class="dados">
+            <p>
+            <h5> Início </h5>
+            Menu <br>
+            </p>
+        </div>
+        <div class="dados2">
+            <p>
+            <h5> Suporte </h5>
+            FAQ <br>
+            Telefones <br>
+            Chat <br>
+            </p>
+        </div>
+        <div class="media">
+            <p> @2022 Copyright - Control Tec </p>
+        </div>
+    </footer> 
+
+</body>
+
+</html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        // aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("instituicao");
+        var rua = formulario.get("rua");
+        var numero = formulario.get("numero");
+        var bairro = formulario.get("bairro");
+        var cep = formulario.get("cep");
+        var estado = formulario.get("estado");
+        var cidade = formulario.get("cidade");
+        var complemento = formulario.get("complemento");
+        var pontoreferencia = formulario.get("pontoreferencia");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || rua == "" || numero == ""
+            || bairro == "" || cep == "" || estado == "" || cidade == "" || complemento == "" ||
+            pontoreferencia == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "") {
+                console.log('Instituicao está em branco')
+            }
+            if (rua == "") {
+                console.log('Rua está em branco')
+            }
+            if (numero == "") {
+                console.log('numero está em branco')
+            }
+            if (bairro == "") {
+                console.log('bairro está em branco')
+            }
+            if (cep == "") {
+                console.log('cep está em branco')
+            }
+            if (estado == "") {
+                console.log('Estado está em branco')
+            }
+            if (cidade == "") {
+                console.log('Cidade está em branco')
+            }
+            if (complemento == "") {
+                console.log('Complemento está em branco')
+            }
+            if (pontoreferencia == "") {
+                console.log('Ponto de referencia está em branco')
+            }
+            if (email == "") {
+                console.log('email está em branco')
+            }
+            if (senha == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "") {
+                console.log('Confirmação de senha está em branco')
+            }
+            //finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            //finalizarAguardar();
+            return false;
+        }
+
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            //finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                //window.location = "login.html";
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+
+
+    }
+</script>

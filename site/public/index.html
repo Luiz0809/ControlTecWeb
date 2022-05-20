@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Projeto ControlTec </title>
+    <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="div_logo"><img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
+            <a href="" class="brand"> ControlTec </a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a class="item" href="index.html"> Home </a>
+                    <a class="item" href="cadastro.html"> Cadastro</a>
+                    <a class="item" href="login.html"> Login </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide" src="imagens/video1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="imagens/video2.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1> <span> CONTROL TEC</span> <br>
+                Monitoramento de maquinas e qualidade no ensino! </h1>
+            <p> No mundo digital, o monitoramento é real! Queremos ser seu aliado! </p>
+            <a class="botao" href="cadastro.html"> Cadastre-se </a>
+        </div>
+        <div class="content">
+            <h1> Acompanhe as atividades de seus alunos e o estado de saúde de suas máquinas </h1>
+            <p> A Control Tec é o software de monitoramento que te ajuda na gestão de dados </p>
+            <a class="botao" href=""> Saiba mais </a>
+        </div>
+        <div class="media-icons">
+            <a href=""> <i class="fa-brands fa-facebook-f"></i> </a>
+            <a href=""> <i class="fa-brands fa-twitter"></i> </a>
+            <a href=""> <i class="fa-brands fa-instagram"></i> </a>
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <main class="conteudo">
+        <section class="conteudo1">
+            <div class="conteudo-texto">
+                <h2 class="conteudo-titulo"> Por que a ControlTec? </h2>
+                <p class="primeiro-paragrafo"> 1. Monitore a saúde da máquina de seus alunos. </p>
+                <p class="primeiro-paragrafo"> 2. Monitore o desempenho de suas máquinas. </p>
+                <p class="primeiro-paragrafo"> 3. Monitore o desempenho de seus alunos. </p>
+                <p class="primeiro-paragrafo"> 4. Receba informações constantes sobre suas máquinas. </p>
+            </div>
+            <img src="imagens/monitoramento.png" alt="">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="logo">
+            <img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
+        </div>
+        <div class="dados2">
+            <p>
+            <h5> Suporte </h5>
+            FAQ <br>
+            Telefones <br>
+            Chat <br>
+            </p>
+        </div>
+        <div class="media">
+            <p> @2022 Copyright - Control Tec </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    })
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+    var sliderNav = function (manual) {
+
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slides) => {
+            slides.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        })
+    })
+
+
+</script>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Máquina</title>
+    <link rel="stylesheet" href="css/cadastroMaquina.css">
+    <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="" class="logo">
+            <span>ControlTec</span>
+        </a>
+        <ul class="menu">
+         <li ><a href="dashboard.html"><i class="bi bi-display"></i><span>Monitoramento PC</span></a></li>
+         <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
+         <li class="active"><a href="cadastroMaquina.html"><i class="bi bi-display"></i><span>Cadastro de Máquina</span></a></li>
+         <li><a href="cadastroUsuario.html"><i class="bi bi-display"></i><span> Cadastro de Usuário</span></a></li>
+         <li><a href=""><i class="bi bi-display"></i><span> Suporte</span></a></li>
+         <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
+        </ul>
+    </nav>
+
+ <div id="main-container">
+     <h1>Cadastre seu Equipamento</h1>
+     
+     <form method="post" id="form_cadastro" onsubmit="return cadastrar()">
+        <h3>Máquina</h3>
+       
+        <div class="div_container">
+        <div class="half-box">
+            <input id="ipt_identify" placeholder="Identificador">
+        </div>
+        <div class="half-box">
+            <input id="ipt_system" placeholder="Sistema Operacional">
+        </div>
+        </div>
+
+        <h3>Disco</h3>
+
+        <div class="div_container">
+            <div class="half-box spacing">
+                <input id="ipt_name_disk" placeholder="Nome">
+            </div>
+            <div class="half-box spacing">
+                <input id="ipt_model_disk" placeholder="Modelo">
+            </div>
+            <div class="half-box spacing">
+                <input id="ipt_lenth_disk" placeholder="Tamanho">
+            </div>
+        </div>
+
+        <h3>Memória</h3>
+
+        <div class="div_container">
+            <div class="half-box spacing">
+                <input id="ipt_name_memory" placeholder="Nome">
+            </div>
+            <div class="half-box spacing">
+                <input id="ipt_model_memory" placeholder="Modelo">
+            </div>
+            <div class="half-box spacing">
+                <input id="ipt_lenth_memory" placeholder="Tamanho">
+            </div>
+        </div>
+
+            <div class="full-box">
+             <input type="checkbox" id="agreement">
+             <label for="agreement" id="agreement-label">Eu li e aceito os <a href="">termos de uso</a></label>
+            </div>
+            <div class="full-box">
+             <input type="submit" id="btn-submit" value="Registrar">
+            </div>
+     </form>
+ </div>
+</body>
+</html>
+
+<script>
+    
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var ipt_identify = formulario.get("ipt_identify");
+        var ipt_system = formulario.get("ipt_system");
+        var ipt_name_disk = formulario.get("ipt_name_disk");
+        var ipt_model_disk = formulario.get("ipt_model_disk");
+        var ipt_lenth_disk = formulario.get("ipt_lenth_disk");
+        var ipt_name_memory = formulario.get("ipt_name_memory");
+        var ipt_model_memory = formulario.get("ipt_model_memory");
+        var ipt_lenth_memory = formulario.get("ipt_lenth_memory");
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (ipt_identify == "")  {
+                console.log('Identificador está em branco')
+            }
+            if (ipt_system == "" )  {
+                console.log('Sistema operacional está em branco')
+            }
+            if (ipt_name_disk == "" )  {
+                console.log('Nome do disco está em branco')
+            }
+            if (ipt_model_disk == "" )  {
+                console.log('Modelo do disco está em branco')
+            }
+            if (ipt_lenth_disk == "" )  {
+                console.log('Tamanho do disco está em branco')
+            }
+            if (ipt_name_memory == "" )  {
+                console.log('Nome da memoria está em branco')
+            }
+            if (ipt_model_memory == "" )  {
+                console.log('Modelo da memoria está em branco')
+            }
+            if (ipt_lenth_memory == "" )  {
+                console.log('Tamanho da memoria está em branco')
+            }
+        
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar/maquinas", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+        console.log(formulario)
+
+    
+
+
+
+</script>
