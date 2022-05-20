@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./site/app.js",
-    "postinstall": "cd site && npm install",
-    "dev": "nodemon --exec node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "cd site && npm install"
   },
-  "author": "Feito pelos desenvolvedores @ Bandtec Digital School",
+  "author": "Feito pelos desenvolvedores da instituição SPTech Digital School",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
