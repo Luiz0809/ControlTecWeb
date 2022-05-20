@@ -1,4 +1,4 @@
-var usuarioModel = require("../models/instituicaoModel");
+var usuarioModel = require("../models/usuarioModel");
 
 var sessoes = [];
 
@@ -60,7 +60,7 @@ function entrar (req, res) {
 
 }
 
-function cadastrar(req, res) {
+function cadastrarUsuario(req, res) {
     var nome = req.body.nome;
     var email = req.body.email;
     var senha = req.body.senha;
@@ -69,7 +69,7 @@ function cadastrar(req, res) {
     var fkInstituicao = req.body.fkInstituicao;
 
    
-        usuarioModel.cadastrar(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstituicao)
+        usuarioModel.cadastrarUsuario(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstituicao)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -89,6 +89,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     entrar,
-    cadastrar
+    cadastrarUsuario
     
 }

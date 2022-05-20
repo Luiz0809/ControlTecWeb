@@ -18,7 +18,7 @@ function entrar(email, senha) {
     
 }
 
-function cadastrar(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstituicao) {
+function cadastrarUsuario(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstituicao) {
     var instrucao = `
         INSERT INTO [dbo].[Usuario] VALUES ('${nome}', '${dataNascimento}', 
         '${email}','${senha}','${tipoDeUsuario}','${fkInstituicao}');
@@ -29,6 +29,6 @@ function cadastrar(nome, dataNascimento, email, senha, tipoDeUsuario, fkInstitui
 
 module.exports = {
     entrar,
-    cadastrar,
+    cadastrarUsuario,
     listar,
 };

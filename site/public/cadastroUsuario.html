@@ -30,7 +30,7 @@
         <div id="main-container">
             <h1>Cadastre seu Usuário</h1>
             
-            <form method="post" id="form_cadastro" onsubmit="return cadastrar()">
+            <form method="post" id="form_cadastro" onsubmit="return cadastrarUsuario()">
                <h3>Usuário</h3>
               
                <div class="div_container">
@@ -47,7 +47,7 @@
                 <input type="password" name="senha" placeholder="Senha">
                </div>
                <div class="half-box">
-                <input type="password" name="confirmacaoSenha" placeholder="confirme sua senha">
+                <input type="password" name="confirmacaosenha" placeholder="confirme sua senha">
                </div>
                <div class="half-box">
                 <input name="fkInstituicao" placeholder="Numero da sua instituição">
@@ -77,13 +77,15 @@
         document.getElementById("form_cadastro").reset();
     }
 
-    function cadastrar() {
+    function cadastrarUsuario() {
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
         var nome = formulario.get("nome");
         var dataNascimento = formulario.get("dataNasc");
         var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacaosenha")
         var instituicao = formulario.get("fkInstituicao");
         var tipoDeUsuario = formulario.get("tipoUsuario");
         
@@ -97,6 +99,12 @@
                 console.log('Instituicao está em branco')
             }
             if (dataNascimento == "") {
+                console.log('Rua está em branco')
+            }
+            if (senha == "") {
+                console.log('Rua está em branco')
+            }
+            if (confirmacaoSenha == "") {
                 console.log('Rua está em branco')
             }
             if (email == "") {
@@ -124,7 +132,7 @@
             return false;
         }
 
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrarUsuario", {
             method: "POST",
             body: formulario
         }).then(function (resposta) {
