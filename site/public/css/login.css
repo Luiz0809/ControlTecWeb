@@ -225,26 +225,23 @@ header .div_logo{
     margin-left: 16px;
 } */
 
-@media screen and (max-width: 1330px) {
+@media screen and (max-width: 1335px) {
     .form-image {
         display: none;
     }
-
     .container {
         width: 50%;
     }
-
     .form {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 1054px) {
-    /* .container {
-        width: 90%;
-        height: auto;
-    }  */
-
+    .container {
+        width: 65%;
+        height: 500px;
+    }
     .input-group {
         flex-direction: column;
         z-index: 5;
@@ -253,19 +250,15 @@ header .div_logo{
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
-
     .gender-inputs {
         margin-top: 2rem;
     }
-
     .gender-group {
         flex-direction: column;
     }
-
     .gender-title h6 {
         margin: 0;
     }
-
     .gender-input {
         margin-top: 0.5rem;
     }
