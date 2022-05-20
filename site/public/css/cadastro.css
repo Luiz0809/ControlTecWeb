@@ -213,7 +213,7 @@ header .navigation-items .item{
 
 .continue-button button {
     width: 100%;
-    /* margin-top: 0.1rem; */
+    margin-top: 0.1rem;
     border: none;
     background-color: #6c63ff;
     padding: 0.62rem;
