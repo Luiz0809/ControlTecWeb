@@ -35,28 +35,26 @@
               
                <div class="div_container">
                <div class="half-box">
-                   <input id="nome" placeholder="Nome">
+                   <input name="nome" placeholder="Nome">
                </div>
                <div class="half-box">
-                   <input id="dataNasc" placeholder="Data de Nascimento">
+                   <input name="dataNasc" placeholder="Data de Nascimento">
                </div>
                <div class="half-box">
-                <input id="email" placeholder="Email">
+                <input name="email" placeholder="Email">
                </div>
                <div class="half-box">
-                <input type="password" id="senha" placeholder="Senha">
+                <input type="password" name="senha" placeholder="Senha">
                </div>
                <div class="half-box">
-                <input type="password" id="confirmacaoSenha" placeholder="confirme sua senha">
+                <input type="password" name="confirmacaoSenha" placeholder="confirme sua senha">
                </div>
                <div class="half-box">
-                <input id="fkInstituicao" placeholder="Numero da sua instituição">
+                <input name="fkInstituicao" placeholder="Numero da sua instituição">
                </div>
-               <select id="tipoUsuario" class="half-box">
-                   <option  value="">Tipo de Usuário</option>
-                   <option  value="professor">Professor</option>
-                   <option  value="aluno">Aluno</option>
-               </select>
+               <div class="half-box">
+                <input name="tipoUsuario" placeholder="aluno ou professor ?">
+               </div>     
                </div>
                <div class="full-box1">
                 <input type="checkbox" id="agreement">
@@ -87,7 +85,7 @@
         var dataNascimento = formulario.get("dataNasc");
         var email = formulario.get("email");
         var instituicao = formulario.get("fkInstituicao");
-        var tipoDeUsuario = formulario.getElementById('tipoUsuario').value;
+        var tipoDeUsuario = formulario.get("tipoUsuario");
         
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
