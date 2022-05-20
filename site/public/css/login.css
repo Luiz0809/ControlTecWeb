@@ -7,6 +7,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+body{
+    width: 100%;
+}
+
 
 .header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
@@ -225,23 +229,22 @@ header .div_logo{
     margin-left: 16px;
 } */
 
-@media screen and (max-width: 1335px) {
+@media screen and (max-width: 1330px) {
     .form-image {
         display: none;
     }
-    .container {
+     .container {
         width: 50%;
     }
-    .form {
+     .form {
         width: 100%;
-    }
+    } 
 }
 
-@media screen and (max-width: 1054px) {
+@media screen and (max-width: 1064px) {
     .container {
-        width: 65%;
-        height: 500px;
-    }
+        width: 70%;
+    } 
     .input-group {
         flex-direction: column;
         z-index: 5;
