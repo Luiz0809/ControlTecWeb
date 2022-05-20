@@ -7,53 +7,40 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    width: 100%;
-    height: 50vh;
-}
 
-header{
+.header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
-    height: 90px;
+    position: relative;
+    top: 0;
+    height: 70px;
     width: 100%;
+    padding: 30px 100px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
 }
 
 header .div_logo{
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- padding-bottom: 20px;
- align-items: center;
+    position: relative;
+    display: flex;
+    padding-bottom: 20px;
+    align-items: center;
+    letter-spacing: 1px;
 }
 
 #logo{
     width: 120px;
     padding-bottom: 50px;
-    margin-left: -90%;
     margin-top: 50px;
 }
 
-.navigation-items{ 
-    text-align: center;
-    text-transform: capitalize;
-    margin-top: 80px;
-    margin-left: 30%;
-    height: 100px;
-    width: 100%;
-}
-
- /* header .navigation{
+ header .navigation{
     position: relative;
-}  */
+} 
 
-.item{
+ .item{
     color: #ffff;
     text-decoration: none;
-    word-spacing: 5px;
 }
 
 
@@ -221,20 +208,22 @@ header .div_logo{
 
 .footer {
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
+    position: relative;
+    top: 0;
+    height: 230px;
     width: 100%;
-    height: 40vh;
+    padding: 30px 100px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
     color: #ffff;
 }
 
-.footer #logo{
+/* .footer #logo{
     margin-top: 30px;
     width: 150px;
     margin-left: 16px;
-}
+} */
 
 @media screen and (max-width: 1330px) {
     .form-image {
@@ -250,11 +239,11 @@ header .div_logo{
     }
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
-        /* width: 90%; */
-        /* height: auto; */
-    } 
+@media screen and (max-width: 1054px) {
+    /* .container {
+        width: 90%;
+        height: auto;
+    }  */
 
     .input-group {
         flex-direction: column;
