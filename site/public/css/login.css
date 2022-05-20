@@ -7,6 +7,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+body{
+    width: 100%;
+}
+
 
 .header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
@@ -229,22 +233,18 @@ header .div_logo{
     .form-image {
         display: none;
     }
-
-    .container {
+     .container {
         width: 50%;
     }
-
-    .form {
+     .form {
         width: 100%;
-    }
+    } 
 }
 
-@media screen and (max-width: 1054px) {
-    /* .container {
-        width: 90%;
-        height: auto;
-    }  */
-
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 70%;
+    } 
     .input-group {
         flex-direction: column;
         z-index: 5;
@@ -253,19 +253,15 @@ header .div_logo{
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
-
     .gender-inputs {
         margin-top: 2rem;
     }
-
     .gender-group {
         flex-direction: column;
     }
-
     .gender-title h6 {
         margin: 0;
     }
-
     .gender-input {
         margin-top: 0.5rem;
     }
