@@ -37,10 +37,9 @@
                 <input type="text" placeholder="Busca">
                 <button type="submit"><i class="bi bi-search"></i></button>
             </form>
-            <div class="box-profile">
+            <div onclick="atualizar()" class="box-profile">
                 <img src="img/Usuario.png" alt="">
                 <p class="name">
-                    <span>Usuário</span>
                     <span>Bem vindo!</span>
                 </p>
             </div>
@@ -129,3 +128,54 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
 <script src="js/navDash.js"></script>
 <script src="js/charts.js"></script>
+<script>
+    function atualizar() {
+        // aguardar();
+        fetch(`/avisos/listar/${sessionStorage.ID_USUARIO}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("tavares");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("tavares");
+                    feed.innerHTML = "";
+                    for (var i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanID = document.createElement("span");
+                        //spanID.innerHTML = "Quantidade de Pessoas Cadastradas : <b>" + publicacao.SomaDosUsuários + "</b>";
+                        
+
+                    //   /  divPublicacao.className = "publicacao";
+                    //     spanTitulo.id = "inputNumero"+publicacao.idAviso;
+                    //     divButtons.className = "div-buttons"
+
+                        divPublicacao.appendChild(spanID);
+                    
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                throw('Houve um erro na API!');
+            }
+        }).catch(function(resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    
+
+
+    }
+
+</script>
