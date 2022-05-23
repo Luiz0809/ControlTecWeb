@@ -24,7 +24,7 @@
             <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png" alt="">
         </div>
         <div class="form">
-            <form action="#" id="form_login" method="post" onsubmit="returnentrar()">
+            <form action="#" id="form_login" method="post" onsubmit="return entrar()">
                 <div class="form-header">
                     <div class="title">
                         <h1> Entrar </h1>
@@ -34,11 +34,11 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input type="email" name="email" placeholder="Digite seu e-mail" required>
                     </div>
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
                 </div>
                 <div class="continue-button">
@@ -116,7 +116,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/dashboard.html";
+                        window.location = "dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

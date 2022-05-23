@@ -10,7 +10,7 @@ function listar() {
 
 function entrar(email, senha) {
         var instrucao = `
-        SELECT * FROM instituicao WHERE email = '${email}' AND senha = '${senha}';
+        SELECT * FROM [dbo].[Instituicao] WHERE email = '${email}' AND senha = '${senha}';
         
     `;
     console.log("Executando a instrução SQL: \n"+instrucao);
