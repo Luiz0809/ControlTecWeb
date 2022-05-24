@@ -84,6 +84,7 @@ header .div_logo{
     align-items: center;
     background-color: #fff;
     padding: 3rem;
+    
 }
 
 .form-header {
@@ -234,25 +235,48 @@ header .div_logo{
         display: none;
     }
      .container {
-        width: 50%;
-    }
-     .form {
         width: 100%;
+        margin-left: 4%;
+        margin-top: 5%;
+        height: auto;
+    }
+     .form{
+        width: 100%;
+        align-items: center;
+       
     } 
+    button{
+        width: 100%;
+        margin-bottom: 10%;
+    }
+
+    input{
+        width: auto;
+    }
+
+    
 }
 
+
+@media screen and (max-width: 1199.98px) {
+    .header .footer{
+        width: 100%;
+    }
+
+    
+}
 @media screen and (max-width: 1064px) {
     .container {
         width: 70%;
     } 
-    .input-group {
+    /* .input-group {
         flex-direction: column;
         z-index: 5;
         padding-right: 5rem;
         max-height: 10rem;
         overflow-y: scroll;
         flex-wrap: nowrap;
-    }
+    } */
     .gender-inputs {
         margin-top: 2rem;
     }
