@@ -113,10 +113,10 @@
 
     #main-container {
         width: 800px;
-        height: 560px;
+        height: 580px;
         margin-left: 30%;
         margin-right: auto;
-        margin-top: 30px;
+        margin-top: 25px;
         background-color: rgba(255, 255, 255, 0.836);
         border-radius: 10px;
 
@@ -127,6 +127,7 @@
         text-align: center;
         margin-bottom: px;
         font-size: 1.6rem;
+        
     }
 
    .div_container {
@@ -145,15 +146,15 @@
         justify-content: center;
     }
 
-    .half-box {
+    /* .half-box {
        flex: 50%;
        margin-bottom: 5px;
        margin-right: 2.5%;
-    }
+    } */
 
-    .spacing {
+    /* .spacing {
         flex: 29%;
-    }
+    } */
 
     label {
         font-weight: bold;
@@ -162,9 +163,11 @@
 
     input {
         border-bottom: 2px solid #323232;
-        padding: 10px;
+        padding: 7px;
         font-size: .9rem;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        background-color: rgba(255, 255, 255, 0.658);
+        border-radius: 5px;
     }
 
     input:focus {
