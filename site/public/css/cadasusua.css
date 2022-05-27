@@ -18,10 +18,18 @@
         --color-5: #eeeeeec7;
         --color-6: rgb(131, 30, 131);
     }
+
+    .content {
+        /* width: calc(100% - 280px); */
+        height: 100%;
+        /* min-height: 100vh; */
+        position: relative;
+    }
     
-    .nav {
+    
+    .content  .nav {
         display: block;
-        width: 280px;
+        width: 22%;
         height: 100%;
         padding: 15px 0;
         position: fixed;
@@ -30,7 +38,7 @@
         background-color: var(--color-3);
     }
     
-    .nav .logo {
+    .content  .nav .logo {
         width: 100%;
         height: 50px;
         margin-bottom: 50px;
@@ -43,31 +51,31 @@
         transition: all .4s ease-in-out;
     }
     
-    .nav .logo .bi {
+    .content .nav .logo .bi {
         margin-right: 15px;
         font-size: 32px;
         transition: all .4s ease-in-out;
     }
     
-    .nav .logo span {
+    .content .nav .logo span {
         font-weight: 900;
         font-size: 22px;
     }
     
-    .nav .menu {
+    .content .nav .menu {
         list-style: none;
         display: block;
         margin: 0;
         padding: 0;
     }
     
-    .nav .menu li {
+    .content .nav .menu li {
         display: block;
         padding-left: 20px;
         margin-bottom: 10px;
     }
     
-    .nav .menu li a {
+    .content .nav .menu li a {
         width: 100%;
         display: flex;
         align-items: center;
@@ -80,16 +88,16 @@
         transition: all ease-in-out .4s;
     }
     
-    .nav .menu li a .bi {
+    .content .nav .menu li a .bi {
         margin-right: 15px;
     }
     
-    .nav .menu li a:hover {
+    .content .nav .menu li a:hover {
         color: var(--color-3);
         background-color: var(--color-1);
     }
     
-    .nav .menu li.active a {
+    .content .nav .menu li.active a {
         color: var(--color-3);
         background-color: var(--color-1);
     }
@@ -113,10 +121,10 @@
 
     #main-container {
         width: 800px;
-        height: 560px;
+        height: 580px;
         margin-left: 30%;
         margin-right: auto;
-        margin-top: 30px;
+        margin-top: 25px;
         background-color: rgba(255, 255, 255, 0.836);
         border-radius: 10px;
 
@@ -127,6 +135,7 @@
         text-align: center;
         margin-bottom: px;
         font-size: 1.6rem;
+        
     }
 
    .div_container {
@@ -145,15 +154,15 @@
         justify-content: center;
     }
 
-    .half-box {
+    /* .half-box {
        flex: 50%;
        margin-bottom: 5px;
        margin-right: 2.5%;
-    }
+    } */
 
-    .spacing {
+    /* .spacing {
         flex: 29%;
-    }
+    } */
 
     label {
         font-weight: bold;
@@ -162,9 +171,11 @@
 
     input {
         border-bottom: 2px solid #323232;
-        padding: 10px;
+        padding: 7px;
         font-size: .9rem;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        background-color: rgba(255, 255, 255, 0.658);
+        border-radius: 5px;
     }
 
     input:focus {
@@ -193,3 +204,6 @@
     .title_align {
         display: flex;
     }
+
+
+   
