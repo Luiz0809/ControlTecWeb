@@ -1,5 +1,49 @@
-var capacidadeMemoria = document.getElementById('chartMemoria').getContext('2d');
+var cpuDashboard = [];
+var memoryDashboard = [];
 
+window.onload = function plotarGrafico() {
+  fetch("http://localhost:8080/", { method: "GET" })
+    .then(response => response.json())
+    .then(result => {
+       result.forEach(element => {
+         console.log(cpuDashboard);
+         cpuDashboard.push(element.consumoCPU);
+       });
+       createCharts();
+    })
+}
+
+var desempenhoCpu = document.getElementById('chartCpu').getContext('2d');
+var chart = new Chart(desempenhoCpu, {
+    type: 'line',
+    data: {
+        labels: ['0 s', '', '', '', '', '', '', '', '', '', '', '60 s'],
+        datasets: [
+            {
+                label: "",
+                backgroundColor: '#fff',
+                borderColor: '#38d6eb',
+                data: cpuDashboard,
+            }
+        ]
+    },
+    options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Consumo da CPU',
+            padding: {
+              top: 10,
+            },
+            font: {
+              size: 18
+            }
+          }
+        }
+    }
+});
+
+var capacidadeMemoria = document.getElementById('chartMemoria').getContext('2d');
 var chart = new Chart(capacidadeMemoria, {
     type: 'line',
     data: {
@@ -8,7 +52,7 @@ var chart = new Chart(capacidadeMemoria, {
             {
           label: 'Uso da Memória',
           backgroundColor: '#fff',
-          data: [80, 77, 82, 79, 80, 76, 81],
+          data: cpuDashboard,
           fill: false,
           borderColor: 'rgb(75, 192, 192)',
  
@@ -33,34 +77,4 @@ var chart = new Chart(capacidadeMemoria, {
           }
         }
       }
-});
-
-var desempenhoCpu = document.getElementById('chartCpu').getContext('2d');
-var chart = new Chart(desempenhoCpu, {
-    type: 'line',
-    data: {
-        labels: ['0 s', '', '', '', '', '', '', '', '', '', '', '60 s'],
-        datasets: [
-            {
-                label: "",
-                backgroundColor: '#fff',
-                borderColor: '#38d6eb',
-                data: [2, 10, 4, 12, 8, 18, 12, 4, 14, 8, 16, 8],
-            }
-        ]
-    },
-    options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'Consumo da CPU',
-            padding: {
-              top: 10,
-            },
-            font: {
-              size: 18
-            }
-          }
-        }
-    }
 });
