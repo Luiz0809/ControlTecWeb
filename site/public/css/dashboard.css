@@ -46,9 +46,9 @@ body {
     transition: all .4s ease-in-out;
 }
 
-.nav .logo .bi {
+.nav .logo #img_logo {
     margin-right: 15px;
-    font-size: 32px;
+    height: 80px;
     transition: all .4s ease-in-out;
 }
 
@@ -159,7 +159,7 @@ body {
 }
 
 .content .header .form input,
-.content .header .form buttom {
+.content .header .form button {
     outline: none !important;
 }
 
@@ -326,7 +326,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 80px;
     float: right;
     background-color: var(--color-4);
     color: var(--color-1);
@@ -364,7 +364,7 @@ footer {
 }
 
 @media (max-width: 991.98px) {
-    nav {
+    .nav {
         width: 80px;
     }
 
@@ -388,7 +388,7 @@ footer {
         padding-bottom: 15px;
     }
 
-    .content .section .chats .card {
+    .content .section .charts .card {
         margin-bottom: 30px;
     }
 }
