@@ -5,5 +5,8 @@
   "scripts": {
     "start": "node ./site/app.js",
     "postinstall": "cd site && npm install"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.16"
   }
 }
