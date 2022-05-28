@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Open Sans' , sans-serif;
     font-weight: 100;
 }
 
@@ -92,7 +92,7 @@ section {
 }
 
 .text-2 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Open Sans' , sans-serif;;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -277,14 +277,14 @@ section {
 }
 
 .conteudo-titulo{
-    font-family: 'Righteous', cursive;
+    font-family: 'Montserrat', serif;
     font-weight: 400;
     font-size: 45px;
     color: #fff2e7;
 }
 
 .primeiro-paragrafo{
-    font-family: 'Sarala', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 24px;
     color: #ecd6c4;
@@ -296,26 +296,72 @@ section {
    
 } 
 
-.footer {
-    background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
-    position: relative;
-    top: 0;
-    height: 150px;
-    width: 100%;
-    padding: 30px 100px;
+.rodape {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    color: #ffff;
+
+    background-color:rgb(158, 121, 219);
+
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
 }
 
-/* .footer #logo {
-    margin-top: 30px;
-    width: 150px;
-} */
+.rodape__social {
+    display: flex;
+}
+
+.rodape__midia {
+    display: block;
+    color: #fff;
+
+    width: 42px;
+    height: 42px;
+
+    margin: 2rem 1rem;
+}
+
+.rodape__navegacao {
+    color: #fff;
+    text-align: center;
+    line-height: 3;
+    padding: 1px 3px;
+}
 
 
-@media (max-width: 1040px) {
+.rodape__link {
+    display: inline-block;
+    margin: 0 .5rem .7rem;
+}
+
+.rodape__link a{
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+.rodape__logo{
+    height: 60px;
+}
+
+@media screen and (min-width: 1024px) {
+    .rodape {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .rodape__navegacao {
+        text-align: left;
+
+        min-width: 600px;
+    }
+
+    .rodape__logo{
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
 
     header {
         padding: 12px 20px;
@@ -350,11 +396,12 @@ section {
     }
 
     .menu-btn{
-        background: url(/site/public/imagens/menu.png);
+        background: url(../imagens/menu.png);
+        background-repeat: no-repeat;
         background-size: 30px;
         background-position: center;
         width: 40px;
-        height: 100px;
+        height: 80px;
         cursor: pointer;
         transition: 0.3s ease;
     } 
@@ -372,8 +419,9 @@ section {
 
     header .navigation.active{
         background: rgba(98, 167, 223, 0.849);
-        width: 600px;
-        max-width: 600px;
+        width: 400px;
+        height: 500px;
+        /* max-width: 600px; */
         margin: 20px;
         padding: 40px;
         display: flex;
@@ -385,7 +433,9 @@ section {
 
     .menu-btn.active{
         z-index: 999;
-        background: url(/site/public/imagens/close.png);
+        position: fixed;
+        background: url(../imagens/close.png);
+        background-repeat: no-repeat;
         background-size: 25px;
         background-position: center;
         transition: 0.3s ease;
