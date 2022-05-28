@@ -78,3 +78,39 @@ var chart = new Chart(capacidadeMemoria, {
         }
       }
 });
+
+var capacidadeDisco = document.getElementById('chartDisco').getContext('2d');
+var chart = new Chart(capacidadeDisco, {
+    type: 'line',
+    data: {
+        labels: ['0 s', '10 s', '20 s', '30 s', '40 s', '50 s', '60 s'],
+        datasets: [
+            {
+          label: 'Uso de Armazenamento de Disco',
+          backgroundColor: '#fff',
+          data: cpuDashboard,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+ 
+        }
+    ]
+    },
+    options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: true
+          }
+        },
+        
+        scales: {
+          y: { 
+            min: 0,
+            max: 100
+          }
+        }
+      }
+});
