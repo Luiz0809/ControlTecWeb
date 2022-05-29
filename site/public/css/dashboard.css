@@ -227,16 +227,15 @@ body {
     background-color: var(--color-4);
 }
 
-
-/* .content .section .container-content .title {
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--color-2);
-    margin-bottom: 30px;
-} */
+.div_center_dash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /*PROCESSOS*/
 
+/*XXXXXXXXXXXXXXXX*/
 
 /*FOOTER*/
 
@@ -245,7 +244,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 50px;
     float: right;
     background-color: var(--color-4);
     color: var(--color-1);

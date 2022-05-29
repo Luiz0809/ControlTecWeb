@@ -19,11 +19,11 @@
             <span>ControlTec</span>
         </a>
         <ul class="menu">
-         <li class="active"><a href="dashboard.html"><i class="bi bi-display "></i><span>Monitoramento PC</span></a></li>
+         <li class="active"><a href="dashboard.html"><i class="bi bi-speedometer2"></i><span>Monitoramento PC</span></a></li>
          <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
          <li><a href="cadastroTurma.html"><i class="bi bi-display"></i><span>Cadastro de Máquina</span></a></li>
-         <li><a href="cadastroUsuario.html"><i class="bi bi-display"></i><span> Cadastro de Usuário</span></a></li>
-         <li><a href=""><i class="bi bi-display"></i><span> Suporte</span></a></li>
+         <li><a href="cadastroUsuario.html"><i class="bi bi-person-circle"></i><span> Cadastro de Usuário</span></a></li>
+         <li><a href=""><i class="bi bi-envelope"></i><span> Suporte</span></a></li>
          <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
         </ul>
     </nav>
@@ -32,7 +32,7 @@
         <header class="header">
             <button type="button" class="button toggle-menu active">
                 <i class="bi bi-list"></i>
-                <span>Monitoramento PC</span>
+                <span>Dashboard</span>
             </button>
             <form action="" class="form">
                 <input type="text" placeholder="Busca">
@@ -61,14 +61,18 @@
                             <canvas class="shadow" id="chartMemoria" width="488" height="280">
                             </canvas>
                         </div>
-                    <div class="col-lg-6 col-md-12 col-12">
-                            <div class="card">
-                                <canvas class="shadow" id="chartDisco" width="488" height="280">
-                                </canvas>
                     </div>
+                </div><br>
+                <div class="div_center_dash">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="card">
+                        <canvas class="shadow" id="chartDisco" width="488" height="280">
+                        </canvas>
                     </div>
                 </div>
+                </div>
             </div>
+            
 
            
         </section>
@@ -84,3 +88,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
 <script src="js/navDash.js"></script>
 <script src="js/charts.js"></script>
+<script>
+    var nomeSessao = sessionStorage.NOME_USUARIO;
+    span_user.innerHTML = nomeSessao;
+</script>
