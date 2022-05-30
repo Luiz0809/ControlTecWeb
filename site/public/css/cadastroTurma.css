@@ -169,12 +169,14 @@ body {
     width: 650px;
     height: 500px;
     display: flex;
+    margin-left: 30%;
+    margin-top: 5rem;
     justify-content: center;
     align-items: center;
-    display: flex;
     flex-direction: column;
+    padding: 1rem;
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(148, 114, 211));
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .div_container {
@@ -187,7 +189,7 @@ body {
 }
 
 input {
-    border-bottom: 2px solid #323232;
+    /* border-bottom: 2px solid #323232; */
     padding: 10px;
     font-size: .9rem;
     margin-bottom: 30px;
@@ -232,7 +234,7 @@ input[type="submit"]:hover  {
 }
 
 /*FOOTER*/
-footer {
+/* footer {
     width: calc(100% - 280px);
     display: flex;
     align-items: center;
@@ -241,4 +243,4 @@ footer {
     float: right;
     background-color: var(--color-4);
     color: var(--color-1);
-}
+} */

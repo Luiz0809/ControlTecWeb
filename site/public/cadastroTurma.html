@@ -25,45 +25,33 @@
             <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
         </ul>
     </nav>
+    
     <main class="content">
-        <header class="header">
-            <button type="button" class="button toggle-menu active">
-                <i class="bi bi-list"></i>
-            </button>
-            <!-- <div class="box-profile">
-                <img src="imagens/Usuario.png" alt="">
-                <p class="name">
-                    <span id="span_user">Usuário</span>
-                    <span>Bem vindo!</span>
-                </p>
-            </div> -->
-        </header>
-    </main>
-    <div class="div_form_turma">
-        <div id="main-container">
+        <div class="div_form_turma">
+            <div id="main-container">
 
-            <h1>Cadastre sua Turma</h1><br><br>
+                <h1>Cadastre sua Turma</h1><br><br>
 
-            <form method="post" id="form_cadastro" onsubmit="return cadastrarTurma()">
-                <h3>Turma</h3>
+                <form method="post" id="form_cadastro" onsubmit="return cadastrarTurma()">
+                    <h3>Turma</h3>
 
-                <div class="div_container">
-                    <div class="half-box">
-                        <input name="nome" placeholder="Nome">
+                    <div class="div_container">
+                        <div class="half-box">
+                            <input name="nome" placeholder="Nome">
+                        </div>
+                        <div class="half-box">
+                            <input name="descricao" placeholder="Descrição">
+                        </div>
+                        <div class="half-box">
+                            <input name="sala" placeholder="Sala">
+                        </div>
                     </div>
-                    <div class="half-box">
-                        <input name="descricao" placeholder="Descrição">
+                    <div class="full-box">
+                        <input type="submit" id="btn-submit" value="Registrar">
                     </div>
-                    <div class="half-box">
-                        <input name="sala" placeholder="Sala">
-                    </div>
-                </div>
-                <div class="full-box">
-                    <input type="submit" id="btn-submit" value="Registrar">
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
     </main>
 </body>
 
