@@ -35,6 +35,7 @@
 
   .header .navigation{
     position: relative;
+    
 }  
 
  .item{
@@ -42,7 +43,7 @@
     color: #fff;
     font-family: 'Open Sans';
     text-decoration: none;
-
+    
     display: inline-block;
 
     margin-right: .7rem;
@@ -58,8 +59,8 @@
 
 .container {
     width: 100%;
-    padding-right: 6%;
-    padding-left: 6%;
+    /* padding-right: 6%;
+    padding-left: 6%; */
     
 }
 
@@ -276,10 +277,14 @@
     }
 
     #logo{
-        margin-left: 8rem;
+        margin-left: 10rem;
         height: 100px;
+
     }
 
+    .header .navigation .item{
+        margin-left: 5rem;
+    }
 
 
     
@@ -289,6 +294,7 @@
      .container{
         width: 100%;
         display: flex;
+        /* margin-top: 10px; */
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
      }
 
@@ -310,7 +316,7 @@
     }
 
     .rodape__logo{
-        margin-left: 3rem;
+        margin-left: 10rem;
         height: 100px;
     }
 }
@@ -319,6 +325,7 @@
     .form-image img {
         display: block;
         width: 31rem;
+        margin-top: 4rem;
     }
 
 

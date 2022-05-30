@@ -347,7 +347,7 @@ section {
     .rodape {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .rodape__navegacao {
