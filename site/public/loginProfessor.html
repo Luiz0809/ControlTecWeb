@@ -29,7 +29,7 @@
             <form action="#" id="form_login" method="post" onsubmit="return entrar()">
                 <div class="form-header">
                     <div class="title">
-                        <h1> Entrar </h1>
+                        <h1> Login de Professor </h1>
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@
             return false;
         }
 
-        fetch("/usuarios/autenticar", {
+        fetch("/usuarios/autenticarProfessor", {
             method: "POST",
             body: formulario
         }).then(function (resposta) {
@@ -118,7 +118,7 @@
                  
 
                     setTimeout(function () {
-                        window.location = "cadastroTurma.html";
+                        window.location = "dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
