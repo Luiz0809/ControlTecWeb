@@ -19,17 +19,11 @@
         --color-6: rgb(131, 30, 131);
     }
 
-    .content {
-        /* width: calc(100% - 280px); */
-        height: 100%;
-        /* min-height: 100vh; */
-        position: relative;
-    }
-    
-    
-    .content  .nav {
+    /*NAV*/
+
+    .nav {
         display: block;
-        width: 22%;
+        width: 280px;
         height: 100%;
         padding: 15px 0;
         position: fixed;
@@ -38,7 +32,7 @@
         background-color: var(--color-3);
     }
     
-    .content  .nav .logo {
+    .nav .logo {
         width: 100%;
         height: 50px;
         margin-bottom: 50px;
@@ -51,31 +45,31 @@
         transition: all .4s ease-in-out;
     }
     
-    .content .nav .logo .bi {
+    .nav .logo #img_logo {
         margin-right: 15px;
-        font-size: 32px;
+        height: 80px;
         transition: all .4s ease-in-out;
     }
     
-    .content .nav .logo span {
+    .nav .logo span {
         font-weight: 900;
         font-size: 22px;
     }
     
-    .content .nav .menu {
+    .nav .menu {
         list-style: none;
         display: block;
         margin: 0;
         padding: 0;
     }
     
-    .content .nav .menu li {
+    .nav .menu li {
         display: block;
         padding-left: 20px;
         margin-bottom: 10px;
     }
     
-    .content .nav .menu li a {
+    .nav .menu li a {
         width: 100%;
         display: flex;
         align-items: center;
@@ -88,23 +82,35 @@
         transition: all ease-in-out .4s;
     }
     
-    .content .nav .menu li a .bi {
+    .nav .menu li a .bi {
         margin-right: 15px;
     }
     
-    .content .nav .menu li a:hover {
+    .nav .menu li a:hover {
+        color: #4f48ec;
+        background-color: #fff;
+    }
+    
+    .nav .menu li.active a {
         color: var(--color-3);
         background-color: var(--color-1);
     }
     
-    .content .nav .menu li.active a {
-        color: var(--color-3);
-        background-color: var(--color-1);
+    .content {
+        width: calc(100% - 280px);
+        float: right;
+        align-items: center;
+        display: flex;
+        height: calc(100vh - 100px);
+       
     }
+    
 
     body {
  /*        background-color: gray; vc esta comentado */
         background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(148, 114, 211));
+        font-family: 'Poppins', sans-serif;
+    font-size: 16px;
     }
 
     input, label {
@@ -204,6 +210,3 @@
     .title_align {
         display: flex;
     }
-
-
-   
