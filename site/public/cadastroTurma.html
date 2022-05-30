@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Máquina</title>
-    <!--     <link rel="stylesheet" href="css/cadastroMaquina.css"> -->
-    <link rel="stylesheet" href="css/teste.css">
+    <link rel="stylesheet" href="css/cadastroTurma.css">
     <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
 </head>
 
@@ -42,8 +41,8 @@
     </main>
     <div class="div_form_turma">
         <div id="main-container">
-            
-            <h1>Cadastre sua Turma</h1>
+
+            <h1>Cadastre sua Turma</h1><br><br>
 
             <form method="post" id="form_cadastro" onsubmit="return cadastrarTurma()">
                 <h3>Turma</h3>
@@ -64,7 +63,7 @@
                 </div>
             </form>
         </div>
-        </div>
+    </div>
     </main>
 
     <footer class="footer">
@@ -74,8 +73,12 @@
 </body>
 
 </html>
+<script src="js/navDash.js"></script>
 
 <script>
+    var nomeSessao = sessionStorage.NOME_USUARIO;
+    span_user.innerHTML = nomeSessao;
+
     function limparFormulario() {
         document.getElementById("form_cadastro").reset();
     }
