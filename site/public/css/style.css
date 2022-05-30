@@ -99,7 +99,7 @@ section {
     padding: 20px;
 }
 
-.caixa {
+/* .caixa {
     margin-left: 25px;
     margin-right: 20px;
     width: 250px;
@@ -107,7 +107,7 @@ section {
     background-color: rgba(255, 255, 255, 0.219);
     display: inline-block;
     border-radius: 10px;
-}
+} */
 
 
 .home {
@@ -203,7 +203,7 @@ section {
 
 .home video {
     z-index: 0;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
@@ -228,7 +228,7 @@ section {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 2px rgba(211, 205, 205, 0.5);
-    transition: 0.3s ease;
+    /* transition: 0.1s ease; */
 
 }
 
@@ -240,21 +240,21 @@ section {
     margin-right: 20px;
 }
 
-.slider-navigation .nav-btn:hover {
+/* .slider-navigation .nav-btn:hover {
     transform: scale(1.2);
-}
+} */
 
 .video-slide {
     position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
+    /* width: 100%; */
+    /* clip-path: circle(0% at 0 0%); */
 }
 
-.video-slide.active {
+/* .video-slide.active {
     clip-path: circle(150.0% at 0 50%);
     transition: 2s ease;
     transition-property: clip-path;
-}
+} */
 
  .conteudo{
     height: 15%;
@@ -347,7 +347,7 @@ section {
     .rodape {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     .rodape__navegacao {
@@ -358,6 +358,7 @@ section {
 
     .rodape__logo{
         margin-left: 2rem;
+        height: 90px;
     }
 }
 
