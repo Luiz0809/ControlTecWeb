@@ -57,18 +57,18 @@
     }
     
     
-    .content .nav {
+    .nav {
         display: block;
-        width: 4rem;
+        width: 280px;
         height: 100%;
-        /* padding: 15px 0; */
+        padding: 15px 0;
         position: fixed;
         top: 0;
         left: 0;
         background-color: var(--color-3);
     }
     
-    .content .nav .logo {
+    .nav .logo {
         width: 100%;
         height: 50px;
         margin-bottom: 50px;
@@ -81,31 +81,31 @@
         transition: all .4s ease-in-out;
     }
     
-    .content .nav .logo .bi {
+    .nav .logo #img_logo {
         margin-right: 15px;
-        font-size: 32px;
+        height: 80px;
         transition: all .4s ease-in-out;
     }
     
-    .content  .nav .logo span {
+    .nav .logo span {
         font-weight: 900;
         font-size: 22px;
     }
     
-    .content  .nav .menu {
-        /* list-style: none; */
+    .nav .menu {
+        list-style: none;
         display: block;
         margin: 0;
         padding: 0;
     }
     
-    .content  .nav .menu li {
+    .nav .menu li {
         display: block;
         padding-left: 20px;
         margin-bottom: 10px;
     }
     
-    .content  .nav .menu li a {
+    .nav .menu li a {
         width: 100%;
         display: flex;
         align-items: center;
@@ -118,19 +118,20 @@
         transition: all ease-in-out .4s;
     }
     
-    .content .nav .menu li a .bi {
+    .nav .menu li a .bi {
         margin-right: 15px;
     }
     
-    .content .nav .menu li a:hover {
+    .nav .menu li a:hover {
         color: var(--color-3);
         background-color: var(--color-1);
     }
     
-    .content  .nav .menu li.active a {
+    .nav .menu li.active a {
         color: var(--color-3);
         background-color: var(--color-1);
     }
+    
 
     .content span{
         display: none;

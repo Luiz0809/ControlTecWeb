@@ -1,94 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Máquina</title>
-    <link rel="stylesheet" href="css/cadastroMaquina.css">
+    <!--     <link rel="stylesheet" href="css/cadastroMaquina.css"> -->
+    <link rel="stylesheet" href="css/teste.css">
     <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
 </head>
-<body>
 
-    <main class="content">
+<body>
     <nav class="nav">
         <a href="" class="logo">
+            <img id="img_logo" src="imagens/Logo.png">
             <span>ControlTec</span>
         </a>
         <ul class="menu">
-         <li ><a href="dashboard.html"><i class="bi bi-display"></i><span>Monitoramento PC</span></a></li>
-         <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
-         <li class="active"><a href="cadastroTurma.html"><i class="bi bi-display"></i><span>Cadastro de Turma</span></a></li>
-         <li><a href="cadastroUsuario.html"><i class="bi bi-display"></i><span> Cadastro de Usuário</span></a></li>
-         <li><a href=""><i class="bi bi-display"></i><span> Suporte</span></a></li>
-         <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
+            <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i><span>Monitoramento PC</span></a></li>
+            <li class="active"><a href="cadastroTurma.html"><i class="bi bi-display"></i><span>Cadastro de
+                        Turma</span></a></li>
+            <li><a href="cadastroUsuario.html"><i class="bi bi-person-circle"></i><span> Cadastro de
+                        Usuário</span></a></li>
+            <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
         </ul>
     </nav>
-
-    <header class="header">
-        <button type="button" class="button toggle-menu active">
-            <i class="bi bi-list"></i>
-        </button>
-        </div>
-
- <div id="main-container">
-     <h1>Cadastre sua Turma</h1>
-     
-     <form method="post" id="form_cadastro" onsubmit="return cadastrarTurma()">
-        <h3>Turma</h3>
-       
-        <div class="div_container">
-        <div class="half-box">
-            <input name="nome" placeholder="Nome">
-        </div>
-        <div class="half-box">
-            <input name="descricao" placeholder="Descrição">
-        </div>
-        <div class="half-box">
-            <input name="sala" placeholder="Sala">
-        </div>
-        </div>
-            <div class="full-box">
-             <input type="submit" id="btn-submit" value="Registrar">
+    <main class="content">
+        <header class="header">
+            <button type="button" class="button toggle-menu active">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="box-profile">
+                <img src="imagens/Usuario.png" alt="">
+                <p class="name">
+                    <span id="span_user">Usuário</span>
+                    <span>Bem vindo!</span>
+                </p>
             </div>
-     </form>
- </div>
-</main>
+        </header>
+    </main>
+    <div class="div_form_turma">
+        <div id="main-container">
+            
+            <h1>Cadastre sua Turma</h1>
+
+            <form method="post" id="form_cadastro" onsubmit="return cadastrarTurma()">
+                <h3>Turma</h3>
+
+                <div class="div_container">
+                    <div class="half-box">
+                        <input name="nome" placeholder="Nome">
+                    </div>
+                    <div class="half-box">
+                        <input name="descricao" placeholder="Descrição">
+                    </div>
+                    <div class="half-box">
+                        <input name="sala" placeholder="Sala">
+                    </div>
+                </div>
+                <div class="full-box">
+                    <input type="submit" id="btn-submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>ControlTec</span>
+    </footer>
 
 </body>
+
 </html>
 
 <script>
-
-  
-      
-    
-
     function limparFormulario() {
         document.getElementById("form_cadastro").reset();
     }
 
     function cadastrarTurma() {
-        
+
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
         var nome = formulario.get("nome");
         var descricao = formulario.get("descricao");
         var sala = formulario.get("sala");
 
-            if (nome == "")  {
-                console.log('Identificador está em branco')
-                return false;
-            }
-            if (descricao == "")  {
-                console.log('Descrição está em branco')
-                return false;
-            }
-            if (sala == ""){
-                console.log('Sala está em branco')
-                return false;
-            }         
-            
+        if (nome == "") {
+            console.log('Identificador está em branco')
+            return false;
+        }
+        if (descricao == "") {
+            console.log('Descrição está em branco')
+            return false;
+        }
+        if (sala == "") {
+            console.log('Sala está em branco')
+            return false;
+        }
+
 
         fetch(`/usuarios/cadastrarTurma/${sessionStorage.ID_INSTITUICAO}`, {
             method: "POST",
@@ -100,9 +112,9 @@
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
                 //limparFormulario();
-               // finalizarAguardar();
+                // finalizarAguardar();
             } else {
-                throw("Houve um erro ao tentar realizar o cadastro!");
+                throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -112,8 +124,5 @@
         return false;
         console.log(formulario)
 
-    
     }
-
-
 </script>
