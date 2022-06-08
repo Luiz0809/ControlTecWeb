@@ -1,7 +1,7 @@
 var dashboardModel = require("../models/dashboardModel");
 
-function requisitarValoresCpuDatabase(req, res) {
-    dashboardModel.requisitarValoresCpuDatabase()
+function listar(req, res) {
+    dashboardModel.listar()
     .then(function (resultado) {
         console.log('resultado', resultado)
         if (resultado.length > 0) {
@@ -18,6 +18,6 @@ function requisitarValoresCpuDatabase(req, res) {
     );
 }
 
-exports.get = (req,res) => {
-    requisitarValoresCpuDatabase(req, res);
-};
+module.exports = {
+    listar
+}

@@ -22,7 +22,7 @@ function plotarGrafico() {
   discoDashboard = [];
   labelDisco = [];
 
-  fetch("/dashboard/listar", { method: "GET" })
+  fetch(`/dashboard/listar/${value}` , { method: "GET" })
     .then(response => response.json())
     .then(result => {
       result.forEach(element => {
