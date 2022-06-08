@@ -22,8 +22,7 @@ function plotarGrafico() {
   discoDashboard = [];
   labelDisco = [];
 
-
-  fetch("http://localhost:8080/dashboard/", { method: "GET" })
+  fetch("/dashboard/listar", { method: "GET" })
     .then(response => response.json())
     .then(result => {
       result.forEach(element => {
@@ -75,16 +74,6 @@ function updateCharts() {
   chartDisco.update();
 }
 
-/* for(i = 0; i < cpuDashboard.length; i ++) {
-  console.log('aaaaaa');
-  if(cpuDashboard[i] >= 75) {
-    chartDesempenhoCPU.backgroundColor = red;
-  }
-} */
-
-const skipped1 = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
-const down1 = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
-
 var chartDesempenhoCPU = new Chart(desempenhoCpu, {
   type: 'line',
   data: {
@@ -93,11 +82,8 @@ var chartDesempenhoCPU = new Chart(desempenhoCpu, {
           {
               label: "",
               backgroundColor: '#fff',
-              borderColor: 'red',
+              borderColor: 'rgb(75, 192, 192)',
               data: cpuDashboard,
-              segment: {
-                borderColor: ctx => skipped1(ctx, 'rgb(75, 192, 192)') || down1(ctx, 'rgb(75, 192, 192)'),
-              },
           }
       ]
   },
@@ -117,9 +103,6 @@ var chartDesempenhoCPU = new Chart(desempenhoCpu, {
   }
 });
 
-const skipped2 = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
-const down2 = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
-
 var chartMemoria = new Chart(capacidadeMemoria, {
   type: 'line',
   data: {
@@ -130,11 +113,7 @@ var chartMemoria = new Chart(capacidadeMemoria, {
         backgroundColor: '#fff',
         data: memoryDashboard,
         fill: false,
-        borderColor: 'red',
-        segment: {
-          borderColor: ctx => skipped2(ctx, 'rgb(75, 192, 192)') || down2(ctx, 'rgb(75, 192, 192)'),
-        },
-        
+        borderColor: 'rgb(75, 192, 192)',
       }
   ]
   },
@@ -154,10 +133,6 @@ var chartMemoria = new Chart(capacidadeMemoria, {
     }
 });
 
-const skipped3 = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
-const down3 = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
-const teste3 = (ctx, value) => ctx.p0.parsed.y < ctx.p1.parsed.y ? value : undefined;
-
 var chartDisco = new Chart(consumoDisco, {
   type: 'line',
   data: {
@@ -168,11 +143,7 @@ var chartDisco = new Chart(consumoDisco, {
         backgroundColor: '#fff',
         data: discoDashboard,
         fill: false,
-        borderColor: 'red',
-        segment: {
-          borderColor: ctx => skipped3(ctx, 'rgb(75, 192, 192)') || down3(ctx, 'rgb(75, 192, 192)'),
-        },
-
+        borderColor: 'rgb(75, 192, 192)',
       }
   ]
   },
